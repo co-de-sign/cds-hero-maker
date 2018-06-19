@@ -1,13 +1,15 @@
 import './style.css'
 
+const tab = '  '
+
 function formatCode(current, replacements) {
   const regex = /\.co-de-sign__(\d+) {\n((?:.|\n)*)\n}/.exec(current)
   const number = regex[1]
   const body = regex[2]
 
-  const formattedBody = (replacements.body || body).replace(/\n/g, '\n\t')
+  const formattedBody = (replacements.body || body).trim().replace(/\n/g, `\n${tab}`)
 
-  return PR.prettyPrintOne(`.co-de-sign__${replacements.number || number} {\n${formattedBody}\n}`, 'css')
+  return PR.prettyPrintOne(`.co-de-sign__${replacements.number || number} {\n${tab}${formattedBody}\n}`, 'css')
 }
 
 export default function ControlPanel() {
@@ -33,5 +35,11 @@ export default function ControlPanel() {
 
     code.innerHTML = formatCode(currentValue, { number })
   }
+
+  panel.querySelector('.body > textarea').onkeyup = function(event) {
+    const currentValue = code.innerText
+    const body = event.currentTarget.value
+
+    code.innerHTML = formatCode(currentValue, { body })
   }
 }

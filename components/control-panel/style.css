@@ -19,9 +19,14 @@
   margin: 0;
 }
 
-.control-panel > * > select,
-.control-panel > * > input {
+.control-panel > * > .input {
   margin-top: 1em;
+}
 
+.control-panel > * > textarea {
   resize: none;
+  height: 4em;
+  width: 64ch;
+
+  padding: .5em;
 }
