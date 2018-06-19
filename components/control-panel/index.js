@@ -1,5 +1,15 @@
 import './style.css'
 
+function formatCode(current, replacements) {
+  const regex = /\.co-de-sign__(\d+) {\n((?:.|\n)*)\n}/.exec(current)
+  const number = regex[1]
+  const body = regex[2]
+
+  const formattedBody = (replacements.body || body).replace(/\n/g, '\n\t')
+
+  return PR.prettyPrintOne(`.co-de-sign__${replacements.number || number} {\n${formattedBody}\n}`, 'css')
+}
+
 export default function ControlPanel() {
   const panel = document.querySelector('.control-panel')
   const cover = document.querySelector('.event-cover')
@@ -21,8 +31,7 @@ export default function ControlPanel() {
     const currentValue = code.innerText
     const number = event.currentTarget.value
 
-    code.innerHTML = PR.prettyPrintOne(`.co-de-sign__${number} {
-  date: '18/06; /* terça-feira /*'
-}`, 'css')
+    code.innerHTML = formatCode(currentValue, { number })
+  }
   }
 }
