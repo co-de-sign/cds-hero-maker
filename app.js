@@ -4,7 +4,6 @@ import './base/code.css'
 import './base/unclassed.css'
 
 import EventCover from './components/event-cover'
-import ControlPanel from './components/control-panel'
+import './components/control-panel/style.css'
 
 EventCover()
-ControlPanel()
