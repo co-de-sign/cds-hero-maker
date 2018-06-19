@@ -7656,7 +7656,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _eventCover2.default)();
 (0, _controlPanel2.default)();
-},{"normalize.css/normalize.css":34,"./base/code.css":28,"./base/unclassed.css":271,"./components/event-cover":50,"./components/control-panel":38}],278:[function(require,module,exports) {
+},{"normalize.css/normalize.css":34,"./base/code.css":28,"./base/unclassed.css":271,"./components/event-cover":50,"./components/control-panel":38}],408:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -7826,5 +7826,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[278,4], null)
+},{}]},{},[408,4], null)
 //# sourceMappingURL=/app.cf856ace.map
