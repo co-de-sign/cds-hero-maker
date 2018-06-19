@@ -7656,7 +7656,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _eventCover2.default)();
 (0, _controlPanel2.default)();
-},{"normalize.css/normalize.css":34,"./base/code.css":28,"./base/unclassed.css":271,"./components/event-cover":50,"./components/control-panel":38}],408:[function(require,module,exports) {
+},{"normalize.css/normalize.css":34,"./base/code.css":28,"./base/unclassed.css":271,"./components/event-cover":50,"./components/control-panel":38}],71:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -7685,7 +7685,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49447' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51512' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -7826,5 +7826,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[408,4], null)
+},{}]},{},[71,4], null)
 //# sourceMappingURL=/app.cf856ace.map
