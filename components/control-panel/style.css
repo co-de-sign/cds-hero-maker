@@ -5,16 +5,23 @@
   margin-top: 2em;
 }
 
+.control-panel > * + * {
+  margin-left: 5em;
+}
+
 .control-panel > .color {
   display: flex;
   flex-direction: column;
 }
 
-.control-panel > .color > h3 {
+.control-panel > * > h3 {
   padding: 0;
   margin: 0;
 }
 
-.control-panel > .color > select {
+.control-panel > * > select,
+.control-panel > * > input {
   margin-top: 1em;
+
+  resize: none;
 }
