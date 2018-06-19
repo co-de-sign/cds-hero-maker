@@ -1,0 +1,15 @@
+{
+  "name": "cds-hero-maker",
+  "version": "1.0.0",
+  "description": "Hero maker for Co-de-sign",
+  "main": "index.html",
+  "author": "Yurick <yurick.hauschild@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "parcel ./index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.9.1"
+  }
+}
