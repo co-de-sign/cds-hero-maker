@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "parcel ./index.html"
+    "start": "parcel ./index.html",
+    "build": "parcel build ./index.html --public-url /cds-hero-maker/"
   },
   "devDependencies": {
     "parcel-bundler": "^1.9.1"
