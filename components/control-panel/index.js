@@ -1,4 +1,7 @@
+import h2c from 'html2canvas'
 import './style.css'
+
+import saveAs from '../../helpers/saveAs'
 
 const tab = '  '
 
@@ -23,7 +26,7 @@ export default function ControlPanel() {
     const selectedColor = event.currentTarget.value
     const green = parseInt(selectedColor.slice(3, 5), 16)
 
-    graphics.style.fill = green > 0xA0 ? '#000' : '#fff'
+    graphics.setAttribute('fill', green > 0xA0 ? '#000' : '#fff')
     brand.style.backgroundColor = selectedColor
   }
 
@@ -41,5 +44,11 @@ export default function ControlPanel() {
     const body = event.currentTarget.value
 
     code.innerHTML = formatCode(currentValue, { body })
+  }
+
+  const button = panel.querySelector('button')
+
+  button.onclick = function() {
+    h2c(cover).then(canvas => saveAs(canvas.toDataURL(), 'co-de-sign.png'))
   }
 }

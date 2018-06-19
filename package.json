@@ -13,6 +13,7 @@
     "parcel-bundler": "^1.9.1"
   },
   "dependencies": {
+    "html2canvas": "^1.0.0-alpha.12",
     "normalize.css": "^8.0.0"
   }
 }
