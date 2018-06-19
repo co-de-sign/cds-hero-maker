@@ -22,10 +22,6 @@
   width: 10em;
 }
 
-.event-cover > .brand > svg > g {
-  fill: #FFF;
-}
-
 .event-cover > .info {
   display: flex;
   flex-direction: column;
