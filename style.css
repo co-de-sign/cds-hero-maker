@@ -1,0 +1,23 @@
+.event-cover {
+  display: flex;
+  height: 100%;
+}
+
+.event-cover > .brand {
+  flex: 2;
+
+  background-color: #ff9966;
+}
+
+.event-cover > .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex: 3;
+
+  font-size: 1.5em;
+  background-color: black;
+
+  padding: 3em;
+}
