@@ -34,11 +34,11 @@
   "jest": {
     "verbose": true,
     "setupFiles": [
-      "<rootDir>/__mocks__/browserMocks.js"
+      "<rootDir>/jest/setup.js"
     ],
     "testURL": "http://localhost:8080",
     "moduleNameMapper": {
-      "\\.(jpg|jpe?g|png|gif|eot|otf|webp|svg|ttf|woff|woff2?|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpe?g|png|gif|eot|otf|webp|svg|ttf|woff|woff2?|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest/fileMock.js",
       "\\.(css|less|scss|styl)$": "identity-obj-proxy",
       "^./style$": "identity-obj-proxy",
       "^preact$": "<rootDir>/node_modules/preact/dist/preact.min.js"
