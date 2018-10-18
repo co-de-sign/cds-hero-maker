@@ -1,4 +1,5 @@
 import {h} from 'preact'
+import Container from '../Container'
 import style from './index.styl'
 
 export const colors = ['#0FC', '#9CF', '#96C', '#F69', '#F96', '#FF6']
@@ -9,8 +10,7 @@ const ControlPanel = ({
 	body, onBodyChange,
 	onSubmit,
 }) => (
-	<form class={style.wrapper} onSubmit={e => (e.preventDefault(), onSubmit())}>
-
+	<Container as='form' onSubmit={e => (e.preventDefault(), onSubmit())}>
 		<div>
 			<label class={style.label}>
 				<h4>cor de fundo</h4>
@@ -32,8 +32,7 @@ const ControlPanel = ({
 			<textarea required value={body} onInput={onBodyChange}/>
 			<button class={style.button} style={{color}} type='submit'>🤘</button>
 		</label>
-
-	</form>
+	</Container>
 )
 
 export default ControlPanel
