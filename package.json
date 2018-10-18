@@ -1,23 +1,47 @@
 {
+  "private": true,
   "name": "cds-hero-maker",
-  "version": "1.0.0",
-  "description": "Hero maker for Co-de-sign",
-  "main": "index.html",
-  "author": "Yurick <yurick.hauschild@gmail.com>",
+  "version": "0.0.0",
   "license": "MIT",
-  "private": false,
   "scripts": {
-    "start": "parcel ./index.html",
-    "build": "parcel build index.html --public-url /cds-hero-maker/",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "dev": "preact watch",
+    "build": "npm run test && NODE_ENV=production preact build",
+    "lint": "eslint --ignore-path .gitignore --config eslint.config.js --cache .",
+    "prepare": "patch-package",
+    "test": "npm run lint && jest"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.9.1"
+    "@babel/core": "^7.1.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.7.0",
+    "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "patch-package": "^5.1.1",
+    "postinstall-prepare": "^1.0.1",
+    "preact-cli": "^3.0.0-next.13",
+    "preact-render-spy": "^1.2.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.20.2"
   },
   "dependencies": {
-    "gh-pages": "^1.2.0",
-    "html2canvas": "^1.0.0-alpha.12",
-    "normalize.css": "^8.0.0"
+    "linkstate": "^1.1.1",
+    "preact": "^8.2.6"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "<rootDir>/__mocks__/browserMocks.js"
+    ],
+    "testURL": "http://localhost:8080",
+    "moduleNameMapper": {
+      "\\.(jpg|jpe?g|png|gif|eot|otf|webp|svg|ttf|woff|woff2?|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy",
+      "^./style$": "identity-obj-proxy",
+      "^preact$": "<rootDir>/node_modules/preact/dist/preact.min.js"
+    }
   }
 }

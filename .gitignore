@@ -1,4 +1,5 @@
-.DS_Store
-dist
-.cache
 node_modules
+/build
+/*.log
+.*cache
+package-lock.json
