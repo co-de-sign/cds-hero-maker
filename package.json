@@ -3,6 +3,7 @@
   "name": "cds-hero-maker",
   "version": "0.0.0",
   "license": "MIT",
+  "homepage": "https://github.com/co-de-sign/cds-hero-maker",
   "scripts": {
     "dev": "preact watch",
     "build": "npm run test && NODE_ENV=production preact build",

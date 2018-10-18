@@ -2,6 +2,7 @@ import { h, Component } from 'preact'
 import save from '../../utils/save'
 import EventCover from '../EventCover'
 import ControlPanel, {colors} from '../ControlPanel'
+import Footer from '../Footer'
 
 const FormatCSS = ({number, children: txt}) => (
 	`.co-de-sign__${number} {\n  ${txt.join('').trim().replace(/\n/g, '\n  ')}\n}`
@@ -35,6 +36,7 @@ export default class App extends Component {
 					body={state.body} onBodyChange={this.linkState('body')}
 					onSubmit={this.handleSubmit}
 				/>
+				<Footer/>
 			</div>
 		)
 	}
