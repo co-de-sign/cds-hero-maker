@@ -10,13 +10,23 @@ body
 	-webkit-text-fill-color initial
 	font normal 16px/20px -apple-system, sans-serif
 	background #1e2127
-	color #9ba2b2
+	color #bcd
+	box-sizing border-box
 
-input, textarea, select
+*, *::after, *::before
+	box-sizing inherit
+
+input, select, textarea
+	display block
 	font-family 'Source Code Pro', serif
 	font-weight 400
 	font-style normal
 	font-stretch normal
+	border 0px solid white
+
+input, select
+	height 1.5rem
+	line-height 1.5rem
 
 svg
 	display block

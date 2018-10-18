@@ -1,4 +1,5 @@
-import { h } from 'preact'
+import {h} from 'preact'
+import style from './index.styl'
 
 export const colors = ['#0FC', '#9CF', '#96C', '#F69', '#F96', '#FF6']
 
@@ -8,28 +9,29 @@ const ControlPanel = ({
 	body, onBodyChange,
 	onSubmit,
 }) => (
-	<form class='control-panel' onSubmit={e => (e.preventDefault(), onSubmit())}>
+	<form class={style.wrapper} onSubmit={e => (e.preventDefault(), onSubmit())}>
 
-		<label class='color'>
-			<h3>Cor de fundo</h3>
-			<select class='input' value={color} onInput={onColorChange}>
-				{colors.map(color => (
-					<option value={color} key={color}>{color}</option>
-				))}
-			</select>
+		<div>
+			<label class={style.label}>
+				<h4>cor de fundo</h4>
+				<select value={color} onInput={onColorChange}>
+					{colors.map(color => (
+						<option value={color} key={color}>{color}</option>
+					))}
+				</select>
+			</label>
+
+			<label class={style.label}>
+				<h4>n&ordm; da edição</h4>
+				<input required value={number} onInput={onNumberChange}/>
+			</label>
+		</div>
+
+		<label class={style.body}>
+			<h4>descrição</h4>
+			<textarea required value={body} onInput={onBodyChange}/>
+			<button class={style.button} style={{color}} type='submit'>🤘</button>
 		</label>
-
-		<label class='number'>
-			<h3>Número da edição</h3>
-			<input required class='input' value={number} onInput={onNumberChange}/>
-		</label>
-
-		<label class='body'>
-			<h3>Conteúdo do evento</h3>
-			<textarea required class='input' value={body} onInput={onBodyChange}/>
-		</label>
-
-		<button class='submit' type='submit'>Baixar imagem</button>
 
 	</form>
 )
