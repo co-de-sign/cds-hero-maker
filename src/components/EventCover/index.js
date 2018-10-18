@@ -12,6 +12,7 @@ const getForeground = bg => parseInt(bg[2], 16) > 10 ? '#000' : '#fff'
 
 const style = {
 	wrapper: {
+		width: '100%',
 		maxHeight: '66vh',
 		minHeight: '16rem',
 		fontFamily: '"Source Code Pro", monospace',
