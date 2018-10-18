@@ -13,17 +13,17 @@ const ControlPanel = ({
 	<Container as='form' onSubmit={e => (e.preventDefault(), onSubmit())}>
 		<div>
 			<label class={style.label}>
+				<h4>n&ordm; da edição</h4>
+				<input required value={number} onInput={onNumberChange}/>
+			</label>
+
+			<label class={style.label}>
 				<h4>cor de fundo</h4>
 				<select value={color} onInput={onColorChange}>
 					{colors.map(color => (
 						<option value={color} key={color}>{color}</option>
 					))}
 				</select>
-			</label>
-
-			<label class={style.label}>
-				<h4>n&ordm; da edição</h4>
-				<input required value={number} onInput={onNumberChange}/>
 			</label>
 		</div>
 
