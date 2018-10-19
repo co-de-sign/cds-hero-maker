@@ -18,7 +18,10 @@ const save = ($svg, download = file) => new Promise((resolve, reject) => {
 	$image.onload = () => {
 		try{
 			$canvas.getContext('2d').drawImage($image, 0, 0, width, height)
-			h('a', {download, href: $canvas.toDataURL('image/png')}).click()
+			const $link = h('a', {download, href: $canvas.toDataURL('image/png')})
+			document.body.appendChild($link)
+			$link.click()
+			document.body.removeChild($link)
 			resolve()
 		}catch(e){
 			reject(e)

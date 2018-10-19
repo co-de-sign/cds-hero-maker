@@ -13,6 +13,7 @@ const getForeground = bg => parseInt(bg[2], 16) > 10 ? '#000' : '#fff'
 const style = {
 	wrapper: {
 		width: '100%',
+		height: 'auto',
 		maxHeight: '66vh',
 		minHeight: '16rem',
 		fontFamily: '"Source Code Pro", monospace',
@@ -33,6 +34,8 @@ const EventCover = ({children, background, innerRef}) => (
 	<svg
 		externalResourcesRequired={true}
 		viewBox={`0 0 ${width} ${height}`}
+		width={width}
+		height={height}
 		style={style.wrapper}
 		preserveAspectRatio='xMidYMid slice'
 		fontFamily='"Source Code Pro", monospace'
