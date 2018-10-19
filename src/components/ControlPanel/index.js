@@ -11,10 +11,10 @@ const ControlPanel = ({
 	onSubmit,
 }) => (
 	<Container as='form' onSubmit={e => (e.preventDefault(), onSubmit())}>
-		<div>
+		<div class={style.controls}>
 			<label class={style.label}>
 				<h4>n&ordm; da edição</h4>
-				<input required value={number} onInput={onNumberChange}/>
+				<input required size={4} value={number} onInput={onNumberChange}/>
 			</label>
 
 			<label class={style.label}>
