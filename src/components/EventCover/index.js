@@ -16,9 +16,9 @@ const style = {
 		height: 'auto',
 		maxHeight: '66vh',
 		minHeight: '16rem',
-		fontFamily: '"Source Code Pro", monospace',
 	},
 	code: {
+		margin: '0',
 		color: '#fff',
 		height: '100%',
 		width: '100%',
@@ -38,7 +38,6 @@ const EventCover = ({children, background, innerRef}) => (
 		height={height}
 		style={style.wrapper}
 		preserveAspectRatio='xMidYMid slice'
-		fontFamily='"Source Code Pro", monospace'
 		ref={innerRef}
 	>
 		<rect x={0} y={0} height={height} width={width} fill={background}/>
@@ -51,7 +50,7 @@ const EventCover = ({children, background, innerRef}) => (
 		/>
 		<rect x={xDiff} y={0} height={height} width={width-xDiff} fill='#000'/>
 		<foreignObject x={xDiff + margin} y={0} width={width-xDiff} height={height}>
-			<div style={style.code}>{children}</div>
+			<pre style={style.code}>{children}</pre>
 		</foreignObject>
 	</svg>
 )
