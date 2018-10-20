@@ -11,14 +11,14 @@ const fixSafari = string => encodeURIComponent(string
 
 const toDataURL = string => `data:image/svg+xml;utf8,${fixSafari(string)}`
 
-const save = ($svg, download = file) => new Promise((resolve, reject) => {
+const save = ($svg, name = file) => new Promise((resolve, reject) => {
 	const {width, height} = $svg.viewBox.baseVal
-	const $canvas = h('canvas', {width, height})
-	const $image = new Image(width, height)
+	const $canvas = <canvas width={width} height={height}/>
+	const $image = <img width={width} height={height}/>
 	$image.onload = () => {
 		try{
 			$canvas.getContext('2d').drawImage($image, 0, 0, width, height)
-			const $link = h('a', {download, href: $canvas.toDataURL('image/png')})
+			const $link = <a download={name} href={$canvas.toDataURL('image/png')}/>
 			document.body.appendChild($link)
 			$link.click()
 			document.body.removeChild($link)
