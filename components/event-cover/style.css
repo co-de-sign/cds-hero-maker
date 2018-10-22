@@ -17,11 +17,6 @@
   padding: 3em;
 }
 
-.event-cover > .brand > svg {
-  height: 10em;
-  width: 10em;
-}
-
 .event-cover > .info {
   display: flex;
   flex-direction: column;
